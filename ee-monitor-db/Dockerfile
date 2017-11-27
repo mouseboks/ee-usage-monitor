@@ -1,3 +1,3 @@
 FROM influxdb:latest
 
-RUN 
+ADD docker-entrypoint-initdb.d/* /docker-entrypoint-initdb.d/

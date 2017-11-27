@@ -19,12 +19,12 @@ from influxdb import SeriesHelper
 
 
 config = ConfigParser()
-config.read('/ee-monitor/ee-monitor.ini')
+config.read('/ee-monitor/conf/ee-monitor.ini')
 
 accountconfig = ConfigParser()
-config.read('/ee-monitor/ee-accounts.ini')
+config.read('/ee-monitor/conf/ee-accounts.ini')
 
-logging.config.fileConfig('/ee-monitor/ee-monitor-logging.ini')
+logging.config.fileConfig('/ee-monitor/conf/ee-monitor-logging.ini')
 logger = logging.getLogger(config.get("Logging", "logger_name"))
 
 influxSection = "Influx"
@@ -41,7 +41,7 @@ class MySeriesHelper(SeriesHelper):
 
         # The series name must be a string. Add dependent fields/tags
         # in curly brackets.
-        series_name = 'events.stats.mobile_data'
+        series_name = 'ee-data-remaining'
 
         # Defines all the fields in this time series.
         fields = ['mifi_data_remaining', 'phone_data_remaining']
