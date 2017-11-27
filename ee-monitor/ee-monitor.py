@@ -31,6 +31,7 @@ logger = logging.getLogger(config.get("Logging", "logger_name"))
 influxSection = "Influx"
 myclient = InfluxDBClient(config.get(influxSection, "host"), config.getint(influxSection, "port"), config.get(influxSection, "user"), config.get(influxSection, "password"), config.get(influxSection, "dbname"))
 
+
 class MySeriesHelper(SeriesHelper):
     """Instantiate SeriesHelper to write points to the backend."""
 
@@ -57,13 +58,15 @@ class MySeriesHelper(SeriesHelper):
         # autocommit must be set to True when using bulk_size
         autocommit = True
 
+
 def retrieveDataRemaining(page_source):
     soup = BeautifulSoup(page_source, 'lxml')
 
     scripts = soup.find('span', { 'class': 'usage-datapass-header-text2 usage-datapass-header-text2--lg'})
     return float(scripts.contents[1].text)
 
-def scrapeDataRemaining(username, password):
+
+def login(username, password):
     # FIXME exception trace out of here will contain password in plain text!!!!!
     start_url = 'https://id.ee.co.uk/id/login'
     login_url = 'https://api.ee.co.uk/v1/identity/authorize/login'
@@ -81,26 +84,33 @@ def scrapeDataRemaining(username, password):
     # print requestId
     request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': requestId}
     request = session.post(login_url, data = request_data)
+    return session
 
+
+def scrapeDataRemaining(session, url):
+
+    request = session.get(url)
     if request.status_code != 200:
         raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
 
     return retrieveDataRemaining(request.text)
 
 
-def getDataPoints():
+def getDataPoints(mifi_session, phone_session):
     #client = hvac.Client()
     #client = hvac.Client(url='http://localhost:8200')
+    phone_url = "https://myaccount.ee.co.uk/my-small-business/"
+    mifi_url = "https://myaccount.ee.co.uk/my-mobile-broadband-pay-monthly/"
 
     try:
-        mifi_data_remaining = scrapeDataRemaining(config.get("mifi", "username"),config.get("mifi", "password"))
+        mifi_data_remaining = scrapeDataRemaining(mifi_session, mifi_url)
         logger.info("Retrieved mifi data remaining value of " + str(mifi_data_remaining))
     except Exception as e:
         logger.exception("Failed to scrape mifi data remaining")
         mifi_data_remaining = -1.0
 
     try:
-        phone_data_remaining = scrapeDataRemaining(config.get("phone", "username"),config.get("phone", "password"))
+        phone_data_remaining = scrapeDataRemaining(phone_session, phone_url)
         logger.info("Retrieved phone data remaining value of " + str(phone_data_remaining))
     except Exception as e:
         logger.exception("Failed to scrape mobile data remaining")
@@ -110,8 +120,11 @@ def getDataPoints():
     MySeriesHelper.commit()
 
 def main():
+
+    mifi_session = login(config.get("mifi", "username"),config.get("mifi", "password"))
+    phone_session = login(config.get("phone", "username"),config.get("phone", "password"))
     while True:
-        getDataPoints()
-        time.sleep(60*30)
+        getDataPoints(mifi_session, phone_session)
+        time.sleep(60*5)
 
 main()
