@@ -1,0 +1,20 @@
+Spike the basic scraping of the EE account page in python?
+
+Language choice for full implementation:
+Stay in python if that works?
+Java would be easy given familiarity but feels heavyweight if I'm paying for the .
+Go - interesting from a learning perspective but not a sane choice for the use case.
+Scala, same problems as Java, no clear advantages I'm aware of.
+
+Platform:
+GCP? Cheap, interesting to play with a new Platform
+Azure: Same as GCP?
+AWS: Known quantity
+other?
+
+Logging, graphing, monitoring and alerting:
+Good time to try out logging Saas systems? Try loggly, then try greylog (open source, need to host)
+Graphing, ELK stack?  Saas system?
+monitoring
+
+U^*q3a9BmaCS*6r6

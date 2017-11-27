@@ -1,0 +1,1624 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 8]>
+<html class="no-js lt-ie8 oldie"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie10 lt-ie9 lte-ie8 oldie"> <![endif]-->
+<!--[if IE 9]>
+
+<html class="no-js lte-ie9 lt-ie10 oldie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=EDGE">
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <script type="text/javascript" src="/dtagent6324_23jprx_1011.js" data-dtconfig="rid=RID_-1302350435|rpid=-1230835606|domain=ee.co.uk|rt=10000|tp=500,50,0|reportUrl=dynaTraceMonitor"></script><link rel="shortcut icon" type="image/x-icon" href="/etc/designs/ee-id-web/images/core/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="60x60" href="/etc/designs/ee-id-web/images/core/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/etc/designs/ee-id-web/images/core/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/etc/designs/ee-id-web/images/core/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/etc/designs/ee-id-web/images/core/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/etc/designs/ee-id-web/images/core/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/etc/designs/ee-id-web/images/core/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/etc/designs/ee-id-web/images/core/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/etc/designs/ee-id-web/images/core/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/etc/designs/ee-id-web/images/core/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#007B85">
+    <meta name="msapplication-TileImage" content="/etc/designs/ee-id-web/images/core/favicons/mstile-144x144.png">
+
+    <link rel="stylesheet" href="/etc/designs/ee-id-web/css/core/main.css">
+    
+    
+    
+    
+    <link rel="stylesheet" href="/etc/designs/ee-id-web/css/login/login.css">
+    
+
+
+
+    
+    <title>
+        My EE - Log in
+    </title>
+    <meta name="description" content="Log in to your My EE account">
+
+    
+
+
+
+
+
+
+
+
+    
+    
+        <meta name="robots" content="index,follow">
+    
+
+    
+
+
+
+
+    <link rel="stylesheet" href="https://ee.co.uk/ee-static/css/clientlibs_myee.min.css">
+    <link rel="stylesheet" href="https://ee.co.uk/ee-static/css/clientlibs_meganav.min.css">
+
+    
+
+
+
+
+
+<script>
+
+var EE = EE || {};
+
+EE.properties = {
+    identityEndpoint:           'https://api.ee.co.uk/v1/identity',
+    loginEndpoint:              'https://api.ee.co.uk/v1/identity/authorize/login',
+    tokenEndpoint:              'https://api.ee.co.uk/v1/identity/token',
+    authorizeEndpoint:          'https://api.ee.co.uk/v1/identity/authorize',
+    userInfoEndpoint:           'https://api.ee.co.uk/v1/identity/userinfo',
+    personIdentitiesEndpoint:   'https://api.ee.co.uk/v1/person-identities/self',
+    checkTokenEndpoint:         'https://api.ee.co.uk/v1/identity/check_token',
+    registrationEndpoint:       'https://api.ee.co.uk/v1/person-credentials',
+    passwordResetEndpoint:      'https://api.ee.co.uk/v1/person-credentials',
+    changePasswordEndpoint:     'https://api.ee.co.uk/v1/person-credentials/password-change',
+    changeNameEndpoint:         'https://api.ee.co.uk/v1/person-credentials',
+    changEmailEndpoint:         'https://api.ee.co.uk/v1/person-credentials/email-change',
+    verifyEmailEndpoint:        'https://api.ee.co.uk/v1/person-credentials/email-verification-requests',
+    resendEmailEndpoint:        'https://api.ee.co.uk/v1/person-credentials',
+    logoutEndpoint:             'https://api.ee.co.uk/v1/identity/logout',
+    revokeEndpoint:             'https://api.ee.co.uk/v1/identity/revoke',
+    loginRedirectEndpoint:      'https://id.ee.co.uk/login',
+    pageTimeoutDelay:           '900000',
+    pageTimeoutRedirect:        'https://www.ee.co.uk',
+    pageAccessDelay:            '870000'
+}
+
+</script>
+</head>
+
+
+
+
+
+<body class="inline-search state-default">
+    <div id="eed-off-canvas" class="eed-off-canvas" style="padding-top: 0px;">
+        <div id="skip-links">
+            <a href="#main" class="assistive-text assistive-text--focusable">Skip to main content</a>
+
+            <a href="#eed-header-search" class="assistive-text assistive-text--focusable">Skip to search</a>
+
+        </div>
+
+        <script>
+            if(typeof(EeCommon) != "undefined") {
+                EeCommon.Search.showGlobalSearchBox = true;
+                EeCommon.Search.zeroRatedProxyUrl   = '//searchauto-zr.ee.co.uk/sp1004e197/publish/autocomplete_data.js';
+            }
+        </script>
+        
+        <div class="js-eed-cookie-banner eed-slideout " id="eed-cookie-banner">
+   <div class="js-eed-intro-banner eed-intro-banner ">
+  <div class="container">
+    <div class="ee-intro-banner-content-web">
+        <p class="ee-intro-banner__heading">WE USE COOKIES</p>
+
+	    <p class="ee-intro-banner__consent">By browsing the EE site, you're agreeing to the use of cookies which help improve your online experience.</p>
+        <p class="ee-intro-banner__learn-more"> <a href="http://ee.co.uk/cookies" target="_blank">Learn more<span class="assistive-text">about how we use Cookies</span></a><span class="ee-icon-chevronnext"></span></p>
+        
+    </div>
+    <a class="ee-intro-banner__close ee-icon-close" href="#">
+      <span class="assistive-text">Close</span>
+    </a>
+  </div>
+</div>
+</div>
+<header id="eed-header" style="" class="eed-header eed-slideout  eed-header-margin" data-page-segment="consumer" >
+		
+		    <div class="login-logout-urls hide">
+		        <div class="enable-domain-urls">true</div>
+		        <div class="expected-shop-domain">shop.ee.co.uk</div>
+		        <div class="expected-eeid-domain">id.ee.co.uk</div>
+		        <div class="expected-myee-domain">myaccount.ee.co.uk</div>
+		        <div class="expected-upgradehub-domain">myaccount.ee.co.uk/app</div>
+		        <div class="default-login-url">https://myaccount.ee.co.uk/login-dispatch</div>
+		        <div class="default-logout-url">https://myaccount.ee.co.uk/login-dispatch?fa=logout</div>
+		        <div class="shop-login-url">https://shop.ee.co.uk/authorize/login</div>
+		        <div class="shop-logout-url">https://shop.ee.co.uk/authorize/log-out</div>
+		        <div class="myee-login-url">https://myaccount.ee.co.uk/login-dispatch</div>
+		        <div class="myee-logout-url">https://myaccount.ee.co.uk/login-dispatch?fa=logout</div>
+		        <div class="eeid-login-url">https://id.ee.co.uk/login</div>
+		        <div class="eeid-logout-url">https://id.ee.co.uk/id/logout</div>
+		        <div class="upgradehub-login-url">https://myaccount.ee.co.uk/login-dispatch</div>
+		        <div class="upgradehub-logout-url">https://myaccount.ee.co.uk/app/logout</div>
+		    </div>
+		
+			<!-- TODO - to confirm how to hide when segment selector is hidden. as of now full top bar-->
+			<div class="eed-header-initial">
+				<div class="eed-header-initial__inner container">
+	    	
+	     	<!-- to include the segment selector section -->
+	     	<div id="eed-business-segment-overlay" class="js-eed-header-segment-overlay eed-business-segment-overlay theme-aqua ee-masthead-segment-selector__item">
+	<p class="eed-business-segment-overlay__mainheading">CHOOSE WHICH TYPE OF BUSINESS YOU ARE:</p>
+    <div class="segment_desktop">
+       <div class="col business_segment-col small_business_segment-col">
+		<p class="eed-business-segment-overlay__heading">Small business</p>
+		<div class="segment_description">I am a sole trader or business with up to 100 employees</div>
+		<div class="cta-group">
+				<p><a class="cta-group__button button button-primary" href="https://ee.co.uk/business/small/" data-segment="small-business">SMALL BUSINESS</a></p>
+			</div>
+		</div>
+	<div class="goto_icon">
+		<span class="ee-icon-chevronnext" aria-hidden="true"></span>
+	</div>
+	<div class="col split_text-col">
+		<span></span>
+		<p>OR</p>
+		<span></span>
+	</div>
+<div class="col business_segment-col large_business_segment-col">
+		<p class="eed-business-segment-overlay__heading">Large business</p>
+		<div class="segment_description">I am a business with more than 100 employees</div>
+		<div class="cta-group">
+				<p><a class="cta-group__button button button-primary" href="https://ee.co.uk/business/large/" data-segment="large-business">LARGE BUSINESS</a></p>
+			</div>
+		</div>
+	<div class="goto_icon">
+		<span class="ee-icon-chevronnext" aria-hidden="true"></span>
+	</div>
+</div>
+	<div class="segment_device">
+		<a href="https://ee.co.uk/business/small/" data-segment="small-business"> 
+			<div class="col business_segment-col small_business_segment-col">
+		<p class="eed-business-segment-overlay__heading">Small business</p>
+		<div class="segment_description">I am a sole trader or business with up to 100 employees</div>
+		</div>
+	<div class="goto_icon">
+		<span class="ee-icon-chevronnext" aria-hidden="true"></span>
+	</div>
+	<div class="col split_text-col">
+		<span></span>
+		<p>OR</p>
+		<span></span>
+	</div>
+</a>
+	</div>
+	<div class="segment_device">
+		<a href="https://ee.co.uk/business/large/" data-segment="large-business">
+			<div class="col business_segment-col large_business_segment-col">
+		<p class="eed-business-segment-overlay__heading">Large business</p>
+		<div class="segment_description">I am a business with more than 100 employees</div>
+		</div>
+	<div class="goto_icon">
+		<span class="ee-icon-chevronnext" aria-hidden="true"></span>
+	</div>
+</a>
+	</div>
+</div>
+
+<!-- TODO eed-header-segments__segment--active class has to be added according to the consumer/business segment -->
+				<ul class="eed-header-segments">
+				  <li class="eed-header-segments__item">
+				   <a class="eed-header-segments__segment eed-header-segments__segment--consumer eed-header-segments__segment--active" href="http://ee.co.uk/" data-segment="">Personal</a>
+				  </li>
+				  <li class="eed-header-segments__item">
+				  <a class="js-eed-header-segment-selector eed-header-segments__segment--chevron eed-header-segments__segment" id="eed-business-segment" aria-controls="eed-business-segment-overlay" aria-haspopup="true" aria-expanded="false" href="https://ee.co.uk/business/small/">Business</a>
+				  </li>
+				</ul>
+				 <ul class="eed-header-utility">
+				<li class="eed-header-utility__item">
+			        <a class="eed-header-utility__link ee-masthead-utility__link--coverage" href="http://ee.co.uk/store-finder">
+						    <span class="icon ee-icon-findstore" aria-hidden="true"></span>
+						    Store finder</a>
+			      	</li>
+				<li class="eed-header-utility__item">
+					<a class="eed-header-utility__link eed-header-utility__link--contact" href="http://ee.co.uk/why-ee/mobile-coverage">
+						    <span class="icon ee-icon-coverage" aria-hidden="true"></span>
+						    Coverage checker</a>
+					</li>		      	
+		      	<li class="eed-header-utility__item">
+					</li>
+		      	
+		      	<li class="eed-header-utility__item">
+			        <a class="eed-header-utility__link eed-header-utility__link--findstore" href="http://ee.co.uk/help/contact-us">
+				        	<span class="icon ee-icon-contact" aria-hidden="true"></span>
+				           	Contact us</a>
+					</li>
+		       	<li class="eed-header-utility__item">
+					<!--TODO need to rewrite the logic for logged in determination  -->
+					<div class="eed-masthead-auth">
+                            <a class="js-eed-header-auth eed-header-utility__link eed-header-auth eed-header__control eed-header__control--right eed-header__account eed-header-auth--logged-out eed-header-login-btn" href="https://myaccount.ee.co.uk/login-dispatch/">
+				            	<span class="eed-header-auth__text">Log in / Register</span>
+				            	<img alt="" class="eed-header-auth__icon js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon eed-header__icon eed-header__icon--svg" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-account.svg"/>
+				            </a>
+ 							<a class="js-eed-header-auth eed-header-utility__link eed-header-auth eed-header__control eed-header__control--right eed-header__account eed-header-auth--logged-in eed-header-utility-hide eed-header-logout-btn" href="https://myaccount.ee.co.uk/login-dispatch?fa=logout">
+				            	<span class="eed-header-auth__text">Log out</span>
+				            	<img alt="" class="eed-header-auth__icon js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon eed-header__icon eed-header__icon--svg" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-account.svg"/>
+				            </a>
+			            </div>
+			      
+					</li>
+		    </ul>
+	     </div>
+</div>
+		     <!--/.header_inner-->
+		     
+		     <div class="eed-header__inner js-eed-header-inner container">
+		         <a rel="home" href="http://ee.co.uk/" class="eed-header-logo eed-header__control" title="Back to homepage">
+			         	<!-- TODO assistive text and alternate text has to be added to dialog -->
+				         <span class="assistive-text">EE</span>
+				         <img alt="" class="eed-header-logo__img js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon eed-header__icon eed-header__icon--svg" data-src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/EE-logo-yellow.svg"/>
+		         </a>
+		         <a id="eed-off-canvas-toggle" href="#eed-off-nav" class="js-off-canvas-toggle eed-header__control eed-header-toggle eed-header-toggle--htx">
+		         	<span class="eed-header-menu-icon"></span>
+                    <span class="assistive-text">Toggle menu</span>
+		         	<!--TODO toggle menu for handheld this has to be added to the dialog -->
+		         </a>
+		         
+		         <nav id="eed-nav" class=" eed-nav ">
+		         	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--first" >
+		         		<ul class="js-eed-off-nav-menu eed-off-nav-menu eed-off-nav-menu--first" >
+		         			 <li class="eed-off-nav-menu__item eed-off-nav-menu__item--logo">
+						      <a rel="home" href="http://ee.co.uk/" title="Back to homepage" role="menu">
+							         <span class="assistive-text">EE</span>
+							         <img alt="" class="eed-header-logo__img js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon" data-src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/EE-logo-aqua.svg"/>
+						        
+					          </a>
+			                </li>
+		         	
+		         		
+		         		<li class="eed-off-nav-menu__item eed-off-nav-menu__item--one" data-category="My EE">
+	<a class="js-eed-nav-drop-trigger eed-off-nav-drop-trigger " href="https://myaccount.ee.co.uk/login-dispatch">
+		<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text ">My EE</span>
+		<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+	</a>
+
+
+
+<div class="  js-eed-off-nav-level js-eed-off-nav-cols eed-nav-level eed-nav-level--one eed-nav-level--tablet-3col eed-nav-level--desktop-5col " data-col-tablet="3" data-col-desktop="5">
+   	<ul class="eed-off-nav-menu__sub">
+	    <li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://myaccount.ee.co.uk/login-dispatch">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Log in or register</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/login-dispatch/?fa=identifyBrand&provider-type=EE">EE Mobile</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://yourhomeaccount.orange.co.uk/">Broadband & EE TV</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/login-dispatch/?fa=identifyBrand&retUrl=&ctnLogin=true&ctnSignUp=&provider-type=Orange&brandLogin=LOG+IN#"><span class="brand-orange">Orange</span></a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://tmobile.ee.co.uk/service/your-account/default-tm-login/"><span class="brand-tmobile">T-Mobile</span></a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/orange">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text"><span class="brand-orange">Orange email</span></span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/ee-and-me/my-ee-app">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Get the app</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/ee-and-me/my-ee-app">My EE</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/ee-and-me/my-ee-app/my-ee-app-orange-and-t-mobile">My EE for&nbsp;<span class="brand-orange">Orange</span></a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/ee-and-me/my-ee-app/my-ee-app-orange-and-t-mobile">My EE for&nbsp;<span class="brand-tmobile">T-Mobile</span></a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://myaccount.ee.co.uk/landing">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Pay monthly</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/my-bills-and-payments/">Bills & payments</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/usage-since-latest-bill/">Current usage</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/my-plan/">Plans & add-ons</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/manage-device/">Manage device</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/my-account/">Add new number</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/upgrades/">My upgrade date</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://myaccount.ee.co.uk/my-plan-pay-as-you-go/">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Pay as you go</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/ee-and-me/top-up-pay-as-you-go">Top up</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/my-plan-pay-as-you-go/">Packs & add-ons</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/plans-and-packs/pay-as-you-go-packs/move-to-ee">Move to EE</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/why-ee">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Great Extras</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee">Pay Monthly Extras</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/pay-as-you-go">Pay as you go perks</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/apple-music">Apple Music</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+</ul> 
+    	
+</div>
+
+   </li>
+<li class="eed-off-nav-menu__item eed-off-nav-menu__item--one" data-category="shop">
+	<a class="js-eed-nav-drop-trigger eed-off-nav-drop-trigger " href="http://shop.ee.co.uk">
+		<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text ">Shop</span>
+		<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+	</a>
+
+
+
+<div class=" eed-nav-level--has-primary js-eed-off-nav-level js-eed-off-nav-cols eed-nav-level eed-nav-level--one eed-nav-level--tablet-3col eed-nav-level--desktop-5col " data-col-tablet="3" data-col-desktop="5">
+   	<ul class="eed-off-nav-menu__sub">
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--sub eed-off-nav-menu__item--primary">
+               <a href="http://shop.ee.co.uk">
+                   <span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">See all shop</span>
+                   <img alt="" class="js-eed-svg-icon eed-svg-icon eed-icon--xs eed-svg-icon--hidden eed-off-nav-menu__icon eed-off-nav-menu__icon--right not-handheld" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-chevron--right.svg"/>
+               </a>
+           </li>
+		
+		<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Phones</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers">Pay monthly phones</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers:brand:brands_apple">iPhone</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers:brand:brands_samsung">Samsung phones</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=%3A%3Abrand%3Abrands_google%3Abrand%3Abrands_htc%3Abrand%3Abrands_huawei%3Abrand%3Abrands_lg%3Abrand%3Abrands_nokia%3Abrand%3Abrands_samsung%3Abrand%3Abrands_sony">Android phones</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/price-plans/pay-monthly">Choose by plan cost</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-as-you-go/gallery?search=:best-sellers">Pay as you go phones</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/sim-only">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">SIM only</span>
+			</a>
+	</li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/upgrade">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Upgrades</span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers:brand:brands_apple">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Latest devices</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/iphone-x-64gb-space-grey/details">iPhone X</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=:best-sellers:brand:brands_apple">iPhone 8</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/watches/pay-monthly-watches/gallery">Apple Watch Series 3</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phones/pay-monthly/gallery?search=%3A%3Abrand%3Abrands_google#">Google Pixel 2</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/mobile-phone-deals">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Latest deals</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/mobile-phone-deals/black-friday-mobile-phone-deals">Black Friday deals</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/christmas-deals">Christmas deals</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/my-offers">EE customer offers</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/plans-and-packs">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">EE plans & packs</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/pay-as-you-go-to-pay-monthly">Move to pay monthly</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/price-plans/paymonthly">Pay monthly phone plans</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/price-plans/data-plans">Pay monthly data plans</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/plans-and-packs/pay-as-you-go-packs/move-to-ee">Move to EE pay as you go</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/plans-and-packs/pay-as-you-go-packs">Pay as you go phone packs</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/iphone">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">EE & Apple</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/iphone">iPhone buying guide</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/tablets/pay-monthly-tablets/gallery">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Tablets</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/tablets/pay-monthly-tablets/gallery?search=:best-sellers:brand:brands_apple">iPad</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/tablets/pay-monthly-tablets/gallery?search=%3A%3Abrand%3Abrands_acer%3Abrand%3Abrands_alcatel%3Abrand%3Abrands_ee%3Abrand%3Abrands_huawei%3Abrand%3Abrands_samsung">Android tablets</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/international/travelling-abroad">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Roaming</span>
+			</a>
+	</li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/calling-abroad">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Calling abroad from the UK</span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/broadband">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Broadband & TV</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/broadband">Home broadband</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/broadband/ee-tv">EE TV</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/dongles/pay-monthly-mobile-broadband/gallery">Mobile broadband</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://accessories.ee.co.uk/">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Accessories</span>
+			</a>
+	</li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/add-to-plan-accessories">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Add to plan accessories</span>
+			</a>
+	</li>
+</ul> 
+    	
+</div>
+
+   </li>
+<li class="eed-off-nav-menu__item eed-off-nav-menu__item--one" data-category="help">
+	<a class="js-eed-nav-drop-trigger eed-off-nav-drop-trigger " href="http://ee.co.uk/help">
+		<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text ">Help</span>
+		<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+	</a>
+
+
+
+<div class=" eed-nav-level--has-primary js-eed-off-nav-level js-eed-off-nav-cols eed-nav-level eed-nav-level--one eed-nav-level--tablet-3col eed-nav-level--desktop-5col " data-col-tablet="3" data-col-desktop="5">
+   	<ul class="eed-off-nav-menu__sub">
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--sub eed-off-nav-menu__item--primary">
+               <a href="http://ee.co.uk/help">
+                   <span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">See all help</span>
+                   <img alt="" class="js-eed-svg-icon eed-svg-icon eed-icon--xs eed-svg-icon--hidden eed-off-nav-menu__icon eed-off-nav-menu__icon--right not-handheld" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-chevron--right.svg"/>
+               </a>
+           </li>
+		
+		<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#start">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Getting started</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/getting-started/joining-ee/keeping-your-number">Keeping your number</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/getting-started/swap-or-activate-your-sim/activating-your-sim">Help with your SIM</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help/accounts-billing-and-topping-up/upgrades">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">How to upgrade</span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help/mobile-and-home-connections/checking-and-improving-your-network-coverage">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Check & improve coverage</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/phones-and-device/wifi-calling">Help with WiFi Calling</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://myaccount.ee.co.uk/networkchecker/checkservice">Network Status Checker</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#account">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Accounts, billing & top up</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/accounts-billing-and-topping-up/sign-up-and-manage-your-account">Register & manage your account</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/accounts-billing-and-topping-up/billing-and-payment">Billing & payment</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/accounts-billing-and-topping-up/pay-as-you-go-top-ups/ways-to-top-up">Ways to top up</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://myaccount.ee.co.uk/orderdetails">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Track your order</span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#account">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Price plans & add-ons</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/price-plans-and-costs">Pay monthly plans</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/accounts-billing-and-topping-up/pay-as-you-go-top-ups/pay-as-you-go-packs-and-add-ons">Pay as you go packs & add-ons</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/call-or-going-abroad/roaming-costs">Roaming charges</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/call-or-going-abroad/calling-abroad-from-the-uk">Calling abroad from the UK</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/calling-texting-and-data-add-ons/apple-watch-series-3-ee-set-up-and-plans">Apple Watch EE data plans</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/apple-music">Apple Music</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/add-ons-benefits-and-plans/bt-sport">BT Sport app</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#device">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Phones & devices</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/getting-started/joining-ee/unlocking-your-device">Unlock your device</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/safety-and-security/security/lost-or-stolen-device">Lost or stolen device</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/phones-and-device">Device troubleshooting</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#tv">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">EE TV & broadband</span>
+			</a>
+	</li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help#safe">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Safety & security</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/insurance">Insurance</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help/contact-us">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Contact us</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://community.ee.co.uk/">EE Community</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/help/safety-and-security/my-digital-life/ways-to-complain">Make a complaint</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/help/accounts-billing-and-topping-up/terms-and-conditions">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Terms & conditions</span>
+			</a>
+	</li>
+</ul> 
+    	
+</div>
+
+   </li>
+<li class="eed-off-nav-menu__item eed-off-nav-menu__item--one" data-category="why-ee">
+	<a class="js-eed-nav-drop-trigger eed-off-nav-drop-trigger " href="http://ee.co.uk/why-ee">
+		<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text ">Why EE</span>
+		<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+	</a>
+
+
+
+<div class=" eed-nav-level--has-primary js-eed-off-nav-level js-eed-off-nav-cols eed-nav-level eed-nav-level--one eed-nav-level--tablet-3col eed-nav-level--desktop-5col " data-col-tablet="3" data-col-desktop="5">
+   	<ul class="eed-off-nav-menu__sub">
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--sub eed-off-nav-menu__item--primary">
+               <a href="http://ee.co.uk/why-ee">
+                   <span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">See all Why EE</span>
+                   <img alt="" class="js-eed-svg-icon eed-svg-icon eed-icon--xs eed-svg-icon--hidden eed-off-nav-menu__icon eed-off-nav-menu__icon--right not-handheld" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-chevron--right.svg"/>
+               </a>
+           </li>
+		
+		<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/why-ee/network">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">4G in more places</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/mobile-coverage">Coverage checker</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/network">Our coverage ambition</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/great-phones-are-best-on-ee">Best 4G phones</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/why-ee">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Great Extras</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee">Pay Monthly Extras</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/pay-as-you-go">Pay as you go perks</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/apple-music">Apple Music</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="http://ee.co.uk/why-ee/service">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">24/7 support</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/ee-and-me/network/my-ee-app">My EE</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/why-ee/community">EE Community</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+<li class="eed-off-nav-menu__item--parent  eed-off-nav-menu__item  eed-off-nav-menu__item--sub  ">
+	<a class="js-eed-off-nav-trigger" href="https://shop.ee.co.uk/features-and-articles">
+			<span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">News and stories</span>
+			<span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+			</a>
+	<div class="js-eed-off-nav-level eed-nav-level eed-nav-level--two" >
+
+	
+	<ul class="eed-off-nav-menu__sub eed-off-nav-menu__sub--two">
+	
+
+	    <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="https://shop.ee.co.uk/features-and-articles">Features & articles</a>
+		  </li>
+	  <li class="eed-off-nav-menu__item eed-off-nav-menu__item--two eed-off-nav-menu__item--sub ">
+	        <a href="http://ee.co.uk/our-company/about-us/customer-service-results-2017">Customer experience performance</a>
+		  </li>
+	  </ul>
+	</div>
+ </li>
+</ul> 
+    	
+</div>
+
+   </li>
+</ul>
+		                	
+		                	<div class="eed-off-nav__secondary">
+					           <ul class="eed-off-nav-secondary-menu ">
+					             <li class="eed-off-nav-secondary-menu__item">
+					               <a href="#">
+                                     <span class="js-eed-off-nav-menu-text eed-off-nav-menu__text">Switch to Business</span>
+					                 <span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+					               </a>
+					               <div class="js-eed-off-nav-level eed-nav-level eed-nav-level--one">
+					                 <ul class="eed-off-nav-secondary-menu eed-off-nav-secondary-menu--sub">
+					                   <li class="eed-off-nav-secondary-menu__item eed-off-nav-secondary-menu__item--sub">
+					                      <a href="http://ee.co.uk">
+					                       <span class="eed-off-nav-secondary-menu__link-text">Personal</span>
+					                       <span class="eed-off-nav-secondary-menu__link-sub"></span>
+					                       <span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+					                     </a>
+					                   </li>
+					                   <li class="eed-off-nav-secondary-menu__item eed-off-nav-secondary-menu__item--sub">
+					                    <a href="https://ee.co.uk/business/small/">
+                                             <span class="eed-off-nav-secondary-menu__link-text">Small business</span>
+					                       <span class="eed-off-nav-secondary-menu__link-sub">I am a sole trader or business with up to 100 employees</span>
+					                       <span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+					                     </a>
+					                   </li>
+					                   <li class="eed-off-nav-secondary-menu__item eed-off-nav-secondary-menu__item--sub">
+					                   	  <a href="https://ee.co.uk/business/large/">
+					                       <span class="eed-off-nav-secondary-menu__link-text">Large business</span>
+					                       <span class="eed-off-nav-secondary-menu__link-sub">I am a business with more than 100 employees</span>
+					                       <span class="icon ee-icon-chevronnext eed-off-nav-menu__icon eed-off-nav-menu__icon--right" aria-hidden="true"></span>
+					                     </a>
+					                   </li>
+					                 </ul>
+					               </div>
+					             </li>
+					           	 <li class="eed-off-nav-secondary-menu__item">
+						        		 <a href="http://ee.co.uk/store-finder">
+										    <span class="icon ee-icon-findstore" aria-hidden="true"></span>
+										    Store finder</a>
+									</li>
+						      	<li class="eed-off-nav-secondary-menu__item">
+										 <a href="http://ee.co.uk/why-ee/mobile-coverage">
+										    <span class="icon ee-icon-coverage" aria-hidden="true"></span>
+										    Coverage checker</a>
+									</li>
+								<li class="eed-off-nav-secondary-menu__item">
+								    	<a href="http://ee.co.uk/help/contact-us">
+								        	<span class="icon ee-icon-contact" aria-hidden="true"></span>
+								           	Contact us</a>
+							       	</li>
+								</ul>
+					         </div>
+		         
+			                </div>
+		         </nav>       
+		          <a href="https://myaccount.ee.co.uk/login-dispatch/" class="js-eed-header-auth eed-header-auth eed-header__control eed-header__control--right eed-header__account eed-header-auth--mobile-logged-out eed-header-mobile-login-btn">
+				    <span class="eed-header-auth__text">Log in</span>
+			            <img alt="" class="eed-header-auth__icon js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon eed-header__icon eed-header__icon--svg" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-account.svg"/>
+				 </a>                 
+				 <a href="https://myaccount.ee.co.uk/login-dispatch?fa=logout" class="js-eed-header-auth eed-header-auth eed-header__control eed-header__control--right eed-header__account eed-header-auth--mobile-logged-in eed-header-auth-hide eed-header-mobile-logout-btn">
+				    <span class="eed-header-auth__text">Log out</span>
+			            <img alt="" class="eed-header-auth__icon js-eed-svg-icon eed-svg-icon--hidden eed-svg-icon eed-header__icon eed-header__icon--svg" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-account.svg"/>
+				 </a> 		         
+		         <a href="#" class="js-eed-header-search-toggle eed-header__control eed-header-search-toggle">
+		            	<span class="assistive-text">Search</span>
+				<svg class="js-eed-inline-svg-icon eed-svg-icon eed-header__icon eed-header__icon--svg" data-eed-icon-fallback="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-search.png" xmlns="http://www.w3.org/2000/svg" width="49.331" height="48.166" viewBox="0.366 0.834 49.331 48.166">
+		              		<path fill="#FFF" d="M48.587 42.687L35.98 30.367a18.56 18.56 0 0 0 3.28-10.548C39.26 9.356 30.543.844 19.83.833h-.038C9.078.844.366 9.356.366 19.82c0 10.468 8.722 18.99 19.444 18.99a19.69 19.69 0 0 0 10.81-3.21l12.606 12.317c.747.72 1.713 1.083 2.683 1.083s1.937-.36 2.678-1.083a3.64 3.64 0 0 0 .092-5.14c-.032-.03-.06-.06-.093-.09zM19.807 31.41c-6.542 0-11.867-5.2-11.867-11.59S13.265 8.23 19.807 8.23c6.548 0 11.876 5.2 11.876 11.59s-5.328 11.59-11.876 11.59z"></path>
+		            	</svg>
+		          	</a>
+		          	<div id="eed-header-search" class="js-eed-header-search eed-header-search">
+		            <form id="searchform" name="searchform" class="js-eed-header-search-form eed-header-search__form" method="get" action="https://ee.co.uk/search">
+		              <div class="eed-header-search__search-box">
+		                <input id="q" class="js-eed-header-search-input eed-header-search__input yui-ac-input" type="search" name="q" placeholder="Search" autocomplete="off" autocapitalize="off" aria-label="Search" title="Search field">
+		                <button id="searchform-submit" type="submit" class="eed-header-search__submit">
+		                  <span class="assistive-text">Search</span>
+				  <svg class="js-eed-inline-svg-icon eed-svg-icon eed-header__icon eed-header__icon--svg" data-eed-icon-fallback="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-search--007b85.png" xmlns="http://www.w3.org/2000/svg" width="49.331" height="48.166" viewBox="0.366 0.834 49.331 48.166">
+		                    <path fill="#007B85" d="M48.587 42.687L35.98 30.367a18.56 18.56 0 0 0 3.28-10.548C39.26 9.356 30.543.844 19.83.833h-.038C9.078.844.366 9.356.366 19.82c0 10.468 8.722 18.99 19.444 18.99a19.69 19.69 0 0 0 10.81-3.21l12.606 12.317c.747.72 1.713 1.083 2.683 1.083s1.937-.36 2.678-1.083a3.64 3.64 0 0 0 .092-5.14c-.032-.03-.06-.06-.093-.09zM19.807 31.41c-6.542 0-11.867-5.2-11.867-11.59S13.265 8.23 19.807 8.23c6.548 0 11.876 5.2 11.876 11.59s-5.328 11.59-11.876 11.59z"></path>
+		                  </svg>
+		                </button>
+		                <button type="button" class="eed-header-search__clear js-eed-header-search-clear">
+		                  <span class="assistive-text">Close Search</span>
+				  <img alt="" class="js-eed-svg-icon eed-svg-icon eed-header__icon eed-header__icon--svg" src="https://ee.co.uk/etc/designs/ee-web-2015/clientlibs_meganav/img/icon-close.svg"/>
+		                </button>
+		              </div>
+		              <div id="autocomplete" class="eed-header-search__autocomplete yui-ac-container"></div>
+		              </form>
+		          </div>
+		      </div>
+		</header>
+			<script>
+		 	window.headerType = "consumer";
+		 	window.shop = "";
+		 	window.previewDomain = "";
+		 </script>
+  
+
+        <span id="page-path">
+            104I53maDNab8Y/mdEcuFpn1ksot45TafxkCBMJ/dFc=
+        </span>
+        <div id="eed-header-curtain" class="eed-slideout eed-header-curtain js-eed-header-curtain"></div>
+        
+        <div class="eed-off-canvas__push eed-slideout js-off-canvas-push">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<main id="main" tabindex="0" role="main" class="myee signIn v2-access-flow jsp-myee-login-v2">
+    
+
+	
+
+
+
+
+
+
+<section id="full-width-header" class="white jsp-myee-login-v2 module ">
+    <div class="container">
+        <div class="col span-12">
+            <div class="panel">
+                <h1 class="center ">
+                    
+
+Log in
+
+                 </h1>
+
+                
+                    <div class="sub-sub-title center">
+                        <div class="center sub-sub-title-row-1">
+                            
+
+<p>to&nbsp;<b>EE Mobile,&nbsp;</b>including tablets and 4GEE WiFi</p>
+<p>New to EE? <a adhocenable="false" href="https://id.ee.co.uk/register">Register now &gt;</a></p>
+
+
+                        </div>
+                        <hr class="sub-title-hr">
+                        <div id="manage-different-account-popup-container" class="popup-container">
+                            <a href id="manage-different-account-popup-anchor" data-popup="manage-different-account-popup" class="manage-different-account-link popup-trigger arrow-after">
+                               
+
+Looking for another account?
+
+                            </a>
+
+
+                            <div id="manage-different-account-popup" class="brandSelectPopup"
+                                 style="display: none;">
+
+                                <ul class="manage-different-account-list">
+                                    <div class="popup-close-expander">
+                                        <a href="#">&times;</a>
+
+                                    </div>
+                                    <div class="no-bottom-border">
+                                        
+                                        
+
+Log in or register for:
+
+                                    </div>
+
+                                    
+
+                                   <li class="EE ee-broadband">
+                                        <a href="https://web.orange.co.uk/r/login/?servicename=Your+Account+for+home+broadband&amp;url=https%3A%2F%2Fyourhomeaccount.orange.co.uk%2F" class="eeid-js-arrow">
+
+Home &amp; fixed broadband and EE TV
+</a>
+
+                                    </li>
+                                    <li class="orange">
+                                        <a href="https://myaccount.ee.co.uk/login-dispatch/?fa=identifyBrand&amp;retUrl=&amp;ctnLogin=true&amp;ctnSignUp=&amp;provider-type=Orange&amp;brandLogin=LOG+IN#" class="eeid-js-arrow">
+
+Orange
+</a>
+
+                                    </li>
+                                    <li class="t-mobile">
+                                        <a href="https://myaccount.ee.co.uk/login-dispatch?fa=identifyBrand&amp;retUrl=&amp;ctnLogin=true&amp;ctnSignUp=&amp;provider-type=T-Mobile&amp;brandLogin=LOG+IN#" class="eeid-js-arrow">
+
+T-Mobile
+</a>
+
+                                    </li>
+                                    <li class="start-again">
+                                        <a href="https://myaccount.ee.co.uk/login-dispatch/?ignoreBrand=true" class="eeid-js-arrow">
+
+Start again
+</a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="myee-login-form" class="">
+        <div id="manage-account-login-popup" class=""></div>
+
+        <div class="container">
+            <div class="col span-12">
+
+                
+
+                <div class=" col-span-5 login_margin">
+
+                    <!-- Registration Login Dialogue Panels -->
+
+
+                    <div id="myee-loginv2-input-panel">
+
+                        <div id="signIn" class="myee-capture-ui capture-ui-content capture_screen_container"
+                             style="display: block;">
+                             
+    
+  							<form action="https://api.ee.co.uk/v1/identity/authorize/login" name="userInformationForm" id="userInformationForm" method="POST" autocomplete="off" data-validation-form class="capture_form capture_userInformationForm" accept-charset="UTF-8">
+<input type="hidden" name="csrf" value="gwBV1BrdFkq9bwcuVbuy" id="csrf"/>
+
+                                
+
+								<input type="hidden" id="requestId" name="requestId" value="96b5f5e9-b8c7-40a5-94b5-92868ff0c406"/>
+                                <div id="capture_signIn_userInformationForm_defaultSavedProfileMessage"></div>
+                                <div id="capture_signIn_userInformationForm_errorMessages"></div>
+
+                                <div class="myee-manually-inserted-label">
+                                    <label for="capture_signIn_traditionalSignIn_emailAddress">
+                                        
+
+Email address:
+
+                                    </label>
+                                </div>
+
+                                <div id="capture_signIn_form_item_traditionalSignIn_emailAddress"
+                                     class="capture_form_item capture_email form-control capture_form_item_traditionalSignIn_emailAddress "
+                                     data-validation-field
+                                     >
+
+                                    <input type="email" id="autoFillEmailPlaceHolder" name="username" style="display: none">
+                                    <input name="username" id="capture_signIn_traditionalSignIn_emailAddress" autocomplete="nope" pattern="^(?=\s*\S).*$" value data-validation-input="email" placeholder="example@mail.com" type="email" class="capture_traditionalSignIn_emailAddress capture_required form-control__field cpci-input"/>
+
+
+                                    <div class="error-tip" role="alert" data-validation-error>
+                                        
+
+Please enter a valid email address
+
+                                    </div>
+
+                                    <div class="error-tip" role="alert" data-validation-error-required>
+                                        
+
+Please enter your email address
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row">
+                                    <div id="forgotten-email-address-popup-container"
+                                         class="popup-container ctn-popup-container">
+                                        <a href="#" id="forgotten-email-address-popup-link" data-popup="forgotten-email-address-popup" class="eeid-js-arrow">
+
+Forgotten email address?
+</a>
+
+                                    </div>
+                                </div>
+
+                                <div id="forgotten-email-address-popup"
+                                     class="popup ctn-forgotten-email-address-popup">
+
+                                    <div class="links-list__links-description">
+                                    	
+
+Forgotten which email address you registered with?
+
+                                    </div>
+
+                                    <ul class="links-list__links-container ctn-links">
+                                        <li class="links-list__item">
+                                            <div class="group">
+                                                <div class="media-object ctn-login">
+                                                    <div class="ctn-find-number-sml">
+                                                        <div class="ctn-find-number--top-sml"></div>
+                                                        <div class="ctn-find-number__number-sml">1</div>
+                                                        <div class="ctn-find-number--bottom-sml"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tooltip-item-content">
+                                                	
+
+<p><b>Check your inboxes</b><br>
+for emails from EE</p>
+
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="links-list__item">
+                                            <div class="group">
+                                                <div class="media-object ctn-login">
+                                                    <div class="ctn-find-number-sml">
+                                                        <div class="ctn-find-number--top-sml"></div>
+                                                        <div class="ctn-find-number__number-sml">2</div>
+                                                        <div class="ctn-find-number--bottom-sml"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="tooltip-item-content">
+                                                    <a href="/id/reset-password">
+                                                        
+
+Create a new password
+
+
+                                                    </a>
+
+                                                    
+
+<p>we'll send a link to the right email address.</p>
+
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <div class="myee-manually-inserted-label">
+                                    <label for="capture_signIn_traditionalSignIn_password">
+                                        
+
+Password:
+
+                                    </label>
+                                </div>
+
+                                <div id="capture_signIn_form_item_traditionalSignIn_password"
+                                     class="form-control capture_form_item capture_password capture_form_item_traditionalSignIn_password  "
+                                     data-validation-field
+                                >
+                                <input type="password" id="autoFillPasswordPlaceHolder" name="password" style="display: none">
+                                <input name="password" id="capture_signIn_traditionalSignIn_password" autocomplete="off" pattern="^(?=\s*\S).*$" value data-validation-input="required" type="password" class="capture_traditionalSignIn_password capture_required cpci-input show-hide-password__input form-control__field"/>
+
+
+                                    <div class="capture_tip" style="display:none;"></div>
+                                    <div class="error-tip" role="alert" data-validation-error>
+                                        
+
+Please enter your password
+
+                                    </div>
+                                   <a href="#" id="showPasswordSignIn" data-show-hide="show-hide" class="show-hide-password">SHOW</a>
+
+                                </div>
+
+                                <div class="form-row">
+                                    <div id="forgotten-passwordlink">
+                                        <a href="/id/reset-password" class="eeid-js-arrow">
+                                        	
+
+Forgotten password?
+
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    
+                                </div>
+
+                                
+
+                                
+
+                                <div class="padding_tb5">
+	                                
+		                                
+	                                     
+	                                             <input id="login_remember_me" type="checkbox" name="remember_me" placeholder="">
+	                                      
+                                      
+                                    <label for="login_remember_me">
+                                    	
+
+Remember my email address
+
+                                    </label>
+                                </div>
+
+                                <div class="traditionalSignIn_signInButton">
+                                
+                                <button name="submitButton" id="capture_signIn_traditionalSignIn_signInButton" type="submit" class="cpci-btn no-disable">
+                                    
+                                    
+
+Log In
+
+                                </button>
+
+
+                                </div>
+
+                            </form>
+
+
+                            <div class="form-row">
+                                <div id="traditional_registerlink">
+                                    <a href="/register" class="eeid-js-arrow">
+                                        
+
+Need to register?
+
+                                    </a>
+
+                                </div>
+                            </div>
+                            <!-- /#signIn -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+    </section>
+
+</main>
+<script src="/etc/designs/ee-id-web/js/core/vendor/jquery/jquery.min.js"></script>
+<script src="/etc/designs/ee-id-web/js/core/plugins/jquery.popups.js"></script>
+<script src="/etc/designs/ee-id-web/js/core/utils.js"></script>
+<script src="/etc/designs/ee-id-web/js/core/validation.js"></script>
+<script src="/etc/designs/ee-id-web/js/core/cpci-inactive-timeout.js"></script>
+<script src="/etc/designs/ee-id-web/js/core/main.js"></script>
+<script src="/etc/designs/ee-id-web/js/login/login.js"></script>
+
+
+
+
+
+<script src="/etc/designs/ee-id-web/js/core/insights.js"></script>
+<script>
+var EE = EE || {};
+
+(function($, window, EE) {
+    $(document).ready(function() {
+        if (EE.editMode) {
+            return;
+        }
+        EE.eeIdTracking = EE.Insights.create(
+            'Personal',
+            'EE',
+            'personal > MYEEID > Login',
+            'Login',
+            'flowlogin',
+            'flowlogin_index',
+            'id.ee.co.uk',
+            'LoggedOut',
+            'LOGIN_VIEW',
+            '',
+            '');
+    });
+})($, window, EE);
+
+</script>
+
+			<input type="hidden" id="is_loggedin_id" value="false">
+            <footer id="ee-footer" style="" class="ee-footer"
+			role="contentinfo">
+			<h2 class="assistive-text">Footer</h2>
+			<div class="ee-footer-primary theme-standard theme-white">
+				<div class="container">
+					<div class="ee-footer-links">
+						<section class="ee-footer-links-section"
+							aria-label="OUR COMPANY">
+							<h3 class="ee-footer-links-section__heading">
+								OUR COMPANY</h3>
+							<ul>
+									<li><a href="http://ee.co.uk/our-company/about-us">About Us</a></li>
+									<li><a href="http://ee.co.uk/our-company/our-brands-and-services">Our Brands</a></li>
+									<li><a href="http://newsroom.ee.co.uk/">Newsroom</a></li>
+									<li><a href="http://ee.co.uk/our-company/financials">Financials</a></li>
+									<li><a href="http://ee.co.uk/our-company/corporate-responsibility">Responsibility</a></li>
+									</ul>
+							</section>
+						<section class="ee-footer-links-section"
+							aria-label="USEFUL LINKS">
+							<h3 class="ee-footer-links-section__heading">
+								USEFUL LINKS</h3>
+							<ul>
+									<li><a href="http://community.ee.co.uk/">EE Community</a></li>
+									<li><a href="http://shop.ee.co.uk/family-home/insurance-and-protection">Insurance &amp; Protection</a></li>
+									<li><a href="http://recycle.ee.co.uk/">Recycle and Reward</a></li>
+									<li><a href="http://ee.co.uk/our-company/corporate-responsibility/keeping-children-safe-online">Staying safe online</a></li>
+									<li><a href="http://jobs.ee.co.uk/">Careers</a></li>
+									</ul>
+							</section>
+						<section class="ee-footer-links-section"
+							aria-label="Legal">
+							<h3 class="ee-footer-links-section__heading">
+								Legal</h3>
+							<ul>
+									<li><a href="http://ee.co.uk/help/accounts-billing-and-topping-up/terms-and-conditions">Terms and conditions</a></li>
+									<li><a href="http://ee.co.uk/privacy-policy2">Privacy</a></li>
+									<li><a href="http://ee.co.uk/regulatory">Codes of practice</a></li>
+									<li><a href="http://ee.co.uk/our-company/corporate-responsibility/sharing-connectivity/digital-living/digital-for-all">Accessibility</a></li>
+									<li><a href="http://ee.co.uk/our-company/corporate-responsibility/building-trust/our-supply-chain">Modern Slavery Statement</a></li>
+									</ul>
+							</section>
+						<section
+							class="ee-footer-links-section ee-footer-links-section--social"
+							aria-label="How to find EE">
+							<h3 class="ee-footer-links-section__heading">
+								How to find EE</h3>
+							<ul>
+									<li><a href="http://ee.co.uk/why-ee/network/mobile-coverage">Coverage Checker</a></li>
+									<li><a href="http://ee.co.uk/store-finder">Store finder</a></li>
+									<li><a href="http://ee.co.uk/help/getting-started/joining-ee/delivery-of-your-ee-device">Delivery</a></li>
+									</ul>
+							<p class="ee-footer-social">
+								<a class="ee-footer-social__link ee-icon-twitter" title="Visit our Twitter page" target="_blank" href="https://twitter.com/EE"> <span
+										class="assistive-text">EE on Twitter</span>
+									</a>
+								<a class="ee-footer-social__link ee-icon-facebook" title="Visit our Facebook page" target="_blank" href="http://www.facebook.com/ee">
+										<span class="assistive-text">EE on Facebook</span>
+									</a>
+								<a class="ee-footer-social__link ee-icon-youtube" title="Visit our YouTube channel" target="_blank" href="http://www.youtube.com/ee">
+										<span class="assistive-text">EE on YouTube</span>
+									</a>
+								<a class="ee-footer-social__link ee-icon-linkedin" title="Visit our LinkedIn page" target="_blank" href="http://www.linkedin.com/company/ee-uk"> <span class="assistive-text">EE
+											on LinkedIn</span>
+									</a>
+								</p>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="ee-footer-secondary">
+				<div class="container">
+					<p class="ee-footer-copyright">
+						&copy;
+						2017&nbsp;
+						EE Limited</p>
+					<p class="ee-footer-brand">
+						<span class="ee-footer-brand__link"> <a class="ee-bgimg-orange-logo" target="_blank" href="http://ee.co.uk/help/getting-started/joining-ee/your-new-home-finding-orange-and-t-mobile" title=""> <span class="assistive-text">Visit
+										the Orange website (opens in a new tab/window)</span>
+							</a>
+							</span>
+						<span class="ee-footer-brand__link"> <a class="ee-bgimg-tmobile-logo" target="_blank" href="http://ee.co.uk/help/getting-started/joining-ee/your-new-home-finding-orange-and-t-mobile" title=""> <span class="assistive-text">Visit
+										the T-Mobile website (opens in a new tab/window)</span>
+							</a>
+							</span>
+						<span class="ee-footer-brand__text">brought to you by EE</span>
+					</p>
+				</div>
+			</div>
+		</footer>
+	
+
+            
+                <script src="https://ee.co.uk/ee-static/js/clientlibs_headjs.min.js"></script>
+                <script src="https://ee.co.uk/ee-static/js/clientlibs_myee.min.js"></script>
+                <script src="https://ee.co.uk/ee-static/js/clientlibs_meganav.min.js"></script>
+            
+        </div>
+    </div>
+
+    <script>
+      if (!EE.editMode) {
+		var EESSOSignIn = document.getElementById('is_loggedin_id').value;
+
+		//A fix for window.location.origin in Internet Explorer
+        if (!window.location.origin) {
+          window.location.origin = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+        }
+		
+        var EE = EE || {};
+
+        var EEIDKeepAliveConfig = {
+          originUrl: window.location.origin,
+          endpointLogOut: '/id/logout',
+          endpointTimeout: '/id/revoke',
+          endpointLocalSession: window.location.origin + '/id/extend-session'
+        };
+
+        (function (w, d, s, c, EE, t, m, l, h) {
+          EE.keepAlive = c;
+          t = d.createElement(s);
+          t.async = 1;
+          t.src = EE.keepAlive.originUrl + '/etc/designs/ee-id-web/js/core/eeid-keepalive.js';
+          l = d.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = EE.keepAlive.originUrl + '/etc/designs/ee-id-web/css/core/IMFE-keep-alive-modal.css';
+          h = d.getElementsByTagName('head')[0];
+          h.appendChild(t);
+          h.appendChild(l);
+        })(window, document, 'script', EEIDKeepAliveConfig, EE);
+
+      }
+
+    </script>
+
+    <script src="/etc/designs/ee-id-web/js/core/eeid-keepalive-insights.js"></script>
+    <script src="/etc/designs/ee-id-web/js/core/polyfills/xdr.js"></script>
+
+</body>
+
+
+</html>

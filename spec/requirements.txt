@@ -1,0 +1,25 @@
+High level goal:
+To monitor the bandwidth usage of multiple EE mobile data accounts to ensure efficient but maximal usage of a limited data allowance on each account.
+
+Needs to operate server-side as the data may be used by devices such as Google Home, smartphone etc.
+
+Needs to have an ability to expose a quick "this is current usage" view (desktop widget? html page?)  This also needs to flag the last successful data point collection given the ee site is pretty unreliable.
+
+Should be able to alert based on rules about when to switch from using one a ccount to another.
+
+Should be able to alert on high consumption.
+
+Needs to be secure as it will have to use the account passwords.
+
+Needs to be easily and cheaply runnable continuously somwhere.
+
+Try logging to a SaaS logging services like Loggly
+
+Questions:
+Which language to use for the server-side?
+Is it going to be a daemon or kicked off via cron?
+How split up as processes?  Monolith or microservices doing the monitoring, alerting etc.
+Do the alerts & things from something like graphite, or code myself?
+DOes EE expose an API at all, or am I scraping the pages?
+How to store the data?  It's time series data points...  Do this myself or get the graphing system to do it? ()
+
