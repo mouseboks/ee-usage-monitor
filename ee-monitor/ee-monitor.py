@@ -3,6 +3,7 @@ import json
 import requests
 import logging
 import logging.config
+#from pythonjsonlogger import jsonlogger
 
 import sys
 import os
@@ -19,12 +20,12 @@ from influxdb import SeriesHelper
 
 
 config = ConfigParser()
-config.read('/ee-monitor/conf/ee-monitor.ini')
+config.read('conf/ee-monitor.ini')
 
 accountconfig = ConfigParser()
-config.read('/ee-monitor/conf/ee-accounts.ini')
+config.read('conf/ee-accounts.ini')
 
-logging.config.fileConfig('/ee-monitor/conf/ee-monitor-logging.ini')
+logging.config.fileConfig('conf/ee-monitor-logging.ini')
 logger = logging.getLogger(config.get("Logging", "logger_name"))
 
 influxSection = "Influx"
