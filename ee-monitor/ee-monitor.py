@@ -112,6 +112,6 @@ def getDataPoints():
 def main():
     while True:
         getDataPoints()
-        time.sleep(60*5)
+        time.sleep(60*30)
 
 main()
