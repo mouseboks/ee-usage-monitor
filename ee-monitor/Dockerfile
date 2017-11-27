@@ -8,4 +8,6 @@ RUN pip install urllib3 requests lxml bs4 influxdb
 ADD conf/* /ee-monitor/conf/
 ADD ee-monitor.py /ee-monitor/
 
+WORKDIR /ee-monitor/
+
 CMD python3 /ee-monitor/ee-monitor.py
