@@ -1,13 +1,5 @@
-docker build -t ee-monitor .
-docker build -t ee-monitor-db .
-docker network create --driver bridge ee-monitor-nw
-docker volume create influxdb
-docker volume create grafana
-sudo docker run --network=ee-monitor-nw -d --rm --name=ee-monitor-db --log-driver=gcplogs --log-opt gcp-log-cmd=true -v influxdb:/var/lib/influxdb ee-monitor-db
-sudo docker run --network=ee-monitor-nw -d --rm --name=ee-monitor --log-driver=gcplogs  --log-opt gcp-log-cmd=true -v /home/jamesm/conf/ee-accounts.ini:/ee-monitor/conf/ee-accounts.ini ee-monitor
-sudo docker run --network=ee-monitor-nw -d --rm --name=grafana  --log-driver=gcplogs --log-opt gcp-log-cmd=true -p 3000:3000 -v grafana:/var/lib/grafana grafana/grafana
 
---log-driver=gcplogs
+
 
 docker run --network=ee-scraper-nw -it --rm --name=container3 busybox
 
@@ -21,3 +13,5 @@ docker images
 docker image rm ee-monitor
 
 docker attach ee-scraper
+
+gcloud compute --project "ee-data-usage-monitor" ssh --zone "us-east1-b" "ee-monitor"
