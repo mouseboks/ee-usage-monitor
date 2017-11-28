@@ -3,7 +3,7 @@ import json
 import requests
 import logging
 import logging.config
-#from pythonjsonlogger import jsonlogger
+from pythonjsonlogger import jsonlogger
 
 import sys
 import os
@@ -120,11 +120,21 @@ def getDataPoints(mifi_session, phone_session):
     MySeriesHelper.commit()
 
 def main():
-
-    mifi_session = login(config.get("mifi", "username"),config.get("mifi", "password"))
-    phone_session = login(config.get("phone", "username"),config.get("phone", "password"))
     while True:
-        getDataPoints(mifi_session, phone_session)
-        time.sleep(60*5)
+        try:
+            mifi_session = login(config.get("mifi", "username"),config.get("mifi", "password"))
+            phone_session = login(config.get("phone", "username"),config.get("phone", "password"))
+            session_usage_count = 0
+
+            #Renew the sessions every 5 hours
+            while session_usage_count < (30 * 5):
+                getDataPoints(mifi_session, phone_session)
+                time.sleep(60*2)
+                session_usage_count =  session_usage_count + 1
+            session_usage_count = 0
+        except Exception as e:
+            logger.exception("Exception occurred while trying to scrape")
+
+
 
 main()
