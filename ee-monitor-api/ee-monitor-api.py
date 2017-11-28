@@ -25,7 +25,7 @@ api = Api(app)
 
 class EEData(Resource):
     def get(self):
-         query = 'select * from "ee-data-remaining";'
+         query = 'select * from "ee-data-remaining" order by time desc limit 1;'
          result = myclient.query(query)
          return list(result)
 
