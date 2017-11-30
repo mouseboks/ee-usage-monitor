@@ -27,7 +27,7 @@ class EEData(Resource):
     def get(self):
          query = 'select * from "ee-data-remaining" order by time desc limit 1;'
          result = myclient.query(query)
-         return list(result)
+         return list(result.get_points())
 
 
 api.add_resource(EEData, '/eedata')
