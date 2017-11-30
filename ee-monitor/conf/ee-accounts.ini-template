@@ -1,0 +1,8 @@
+#Create a copy of this file names ee-accounts.ini filled in with the credentials below.
+[mifi]
+username = 
+password = 
+
+[phone]
+username = 
+password = 
