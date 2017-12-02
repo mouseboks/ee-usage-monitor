@@ -5,9 +5,9 @@ RUN apt-get install --no-install-recommends --no-install-suggests -y python3-set
 RUN easy_install3 pip
 RUN pip install urllib3 requests lxml bs4 influxdb python-json-logger
 
-ADD conf/* /ee-monitor/conf/
-ADD ee-monitor.py /ee-monitor/
+ADD conf/* /ee_monitor/conf/
+ADD /ee_monitor/* /ee_monitor/
 
-WORKDIR /ee-monitor/
+WORKDIR /ee_monitor/
 
-CMD python3 /ee-monitor/ee-monitor.py
+CMD python3 /ee_monitor/ee_monitor.py
