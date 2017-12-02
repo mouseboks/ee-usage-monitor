@@ -1,12 +1,11 @@
-import requests
 import logging
 import logging.config
 
 import time
 
-#import loggly.handlers
-
 from configparser import ConfigParser
+
+import requests
 
 from bs4 import BeautifulSoup
 
@@ -24,7 +23,7 @@ logging.config.fileConfig('conf/ee-monitor-logging.ini')
 LOGGER = logging.getLogger(CONFIG.get("Logging", "LOGGER_name"))
 
 INFLUX = "Influx"
-myclient = InfluxDBClient(CONFIG.get(INFLUX, "host"), \
+MYCLIENT = InfluxDBClient(CONFIG.get(INFLUX, "host"), \
                             CONFIG.getint(INFLUX, "port"), \
                             CONFIG.get(INFLUX, "user"), \
                             CONFIG.get(INFLUX, "password"), \
@@ -38,7 +37,7 @@ class MySeriesHelper(SeriesHelper):
         """Meta class stores time series helper configuration."""
 
         # The client should be an instance of InfluxDBClient.
-        client = myclient
+        client = MYCLIENT
 
         # The series name must be a string. Add dependent fields/tags
         # in curly brackets.
@@ -75,52 +74,44 @@ def login(username, password):
     soup = BeautifulSoup(request.text, 'lxml')
     csrf = soup.find(id="csrf")['value']
     # print csrf
-    requestId = soup.find(id="requestId")['value']
+    request_id = soup.find(id="requestId")['value']
     # print requestId
-    request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': requestId}
+    request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': request_id}
     request = session.post(login_url, data=request_data)
     return session
 
 
-def getPageText(session, url):
+def get_page_text(session, url):
 
     request = session.get(url)
     if request.status_code != 200:
-        raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
+        raise ValueError('Received unexpected status code ' + str(request.status_code))
 
     return request.text
 
-def scrapeDataRemaining(session, url):
 
-    request = session.get(url)
-    if request.status_code != 200:
-        raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
-
-    return page_parser.retrieveDataRemaining(request.text)
-
-
-def getDataPoints(mifi_session, phone_session):
+def get_data_points(mifi_session, phone_session):
     #client = hvac.Client()
     #client = hvac.Client(url='http://localhost:8200')
     phone_url = "https://myaccount.ee.co.uk/my-small-business/"
     mifi_url = "https://myaccount.ee.co.uk/my-mobile-broadband-pay-monthly/"
 
     try:
-        text = getPageText(mifi_session, mifi_url)
+        text = get_page_text(mifi_session, mifi_url)
         mifi_data_remaining = page_parser.retrieveDataRemaining(text)
         mifi_days_remaining = page_parser.retrieveDaysRemaining(text)
         LOGGER.info("Retrieved mifi data remaining value of " + str(mifi_data_remaining))
-    except Exception as e:
+    except Exception:
         LOGGER.exception("Failed to scrape mifi data remaining")
         mifi_data_remaining = -1.0
 
     try:
-        text = getPageText(phone_session, phone_url)
+        text = get_page_text(phone_session, phone_url)
         phone_data_remaining = page_parser.retrieveDataRemaining(text)
         phone_days_remaining = page_parser.retrieveDaysRemaining(text)
 
         LOGGER.info("Retrieved phone data remaining value of " + str(phone_data_remaining))
-    except Exception as e:
+    except Exception:
         LOGGER.exception("Failed to scrape mobile data remaining")
         phone_data_remaining = -1.0
 
@@ -133,19 +124,18 @@ def main():
     accountconfig.read('conf/ee-accounts.ini')
     while True:
         try:
-            mifi_session = login(accountconfig.get("mifi", "username"),accountconfig.get("mifi", "password"))
-            phone_session = login(accountconfig.get("phone", "username"),accountconfig.get("phone", "password"))
+            mifi_session = login(accountconfig.get("mifi", "username"), accountconfig.get("mifi", "password"))
+            phone_session = login(accountconfig.get("phone", "username"), accountconfig.get("phone", "password"))
             session_usage_count = 0
 
             #Renew the sessions every 5 hours
             while session_usage_count < (30 * 5):
-                getDataPoints(mifi_session, phone_session)
+                get_data_points(mifi_session, phone_session)
                 time.sleep(60*2)
-                session_usage_count =  session_usage_count + 1
+                session_usage_count = session_usage_count + 1
             session_usage_count = 0
-        except Exception as e:
+        except Exception:
             LOGGER.exception("Exception occurred while trying to scrape")
 
 if __name__ == "__main__":
-    import sys
     main()
