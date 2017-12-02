@@ -1,12 +1,7 @@
-import urllib3
-import json
 import requests
 import logging
 import logging.config
-from pythonjsonlogger import jsonlogger
 
-import sys
-import os
 import time
 
 #import loggly.handlers
@@ -18,18 +13,22 @@ from bs4 import BeautifulSoup
 from influxdb import InfluxDBClient
 from influxdb import SeriesHelper
 
+import page_parser
 
-config = ConfigParser()
-config.read('conf/ee-monitor.ini')
+CONFIG = ConfigParser()
+CONFIG.read('conf/ee-monitor.ini')
 
-accountconfig = ConfigParser()
-config.read('conf/ee-accounts.ini')
+
 
 logging.config.fileConfig('conf/ee-monitor-logging.ini')
-logger = logging.getLogger(config.get("Logging", "logger_name"))
+LOGGER = logging.getLogger(CONFIG.get("Logging", "LOGGER_name"))
 
-influxSection = "Influx"
-myclient = InfluxDBClient(config.get(influxSection, "host"), config.getint(influxSection, "port"), config.get(influxSection, "user"), config.get(influxSection, "password"), config.get(influxSection, "dbname"))
+INFLUX = "Influx"
+myclient = InfluxDBClient(CONFIG.get(INFLUX, "host"), \
+                            CONFIG.getint(INFLUX, "port"), \
+                            CONFIG.get(INFLUX, "user"), \
+                            CONFIG.get(INFLUX, "password"), \
+                            CONFIG.get(INFLUX, "dbname"))
 
 
 class MySeriesHelper(SeriesHelper):
@@ -46,7 +45,7 @@ class MySeriesHelper(SeriesHelper):
         series_name = 'ee-data-remaining'
 
         # Defines all the fields in this time series.
-        fields = ['mifi_data_remaining', 'phone_data_remaining']
+        fields = ['mifi_data_remaining', 'mifi_days_remaining', 'phone_data_remaining', 'phone_days_remaining']
 
         # Defines all the tags for the series.
         tags = []
@@ -59,11 +58,7 @@ class MySeriesHelper(SeriesHelper):
         autocommit = True
 
 
-def retrieveDataRemaining(page_source):
-    soup = BeautifulSoup(page_source, 'lxml')
 
-    scripts = soup.find('span', { 'class': 'usage-datapass-header-text2 usage-datapass-header-text2--lg'})
-    return float(scripts.contents[1].text)
 
 
 def login(username, password):
@@ -71,7 +66,7 @@ def login(username, password):
     start_url = 'https://id.ee.co.uk/id/login'
     login_url = 'https://api.ee.co.uk/v1/identity/authorize/login'
 
-    session = requests.Session();
+    session = requests.Session()
 
     request = session.get(start_url)
     if request.status_code != 200:
@@ -83,9 +78,17 @@ def login(username, password):
     requestId = soup.find(id="requestId")['value']
     # print requestId
     request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': requestId}
-    request = session.post(login_url, data = request_data)
+    request = session.post(login_url, data=request_data)
     return session
 
+
+def getPageText(session, url):
+
+    request = session.get(url)
+    if request.status_code != 200:
+        raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
+
+    return request.text
 
 def scrapeDataRemaining(session, url):
 
@@ -93,7 +96,7 @@ def scrapeDataRemaining(session, url):
     if request.status_code != 200:
         raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
 
-    return retrieveDataRemaining(request.text)
+    return page_parser.retrieveDataRemaining(request.text)
 
 
 def getDataPoints(mifi_session, phone_session):
@@ -103,27 +106,35 @@ def getDataPoints(mifi_session, phone_session):
     mifi_url = "https://myaccount.ee.co.uk/my-mobile-broadband-pay-monthly/"
 
     try:
-        mifi_data_remaining = scrapeDataRemaining(mifi_session, mifi_url)
-        logger.info("Retrieved mifi data remaining value of " + str(mifi_data_remaining))
+        text = getPageText(mifi_session, mifi_url)
+        mifi_data_remaining = page_parser.retrieveDataRemaining(text)
+        mifi_days_remaining = page_parser.retrieveDaysRemaining(text)
+        LOGGER.info("Retrieved mifi data remaining value of " + str(mifi_data_remaining))
     except Exception as e:
-        logger.exception("Failed to scrape mifi data remaining")
+        LOGGER.exception("Failed to scrape mifi data remaining")
         mifi_data_remaining = -1.0
 
     try:
-        phone_data_remaining = scrapeDataRemaining(phone_session, phone_url)
-        logger.info("Retrieved phone data remaining value of " + str(phone_data_remaining))
+        text = getPageText(phone_session, phone_url)
+        phone_data_remaining = page_parser.retrieveDataRemaining(text)
+        phone_days_remaining = page_parser.retrieveDaysRemaining(text)
+
+        LOGGER.info("Retrieved phone data remaining value of " + str(phone_data_remaining))
     except Exception as e:
-        logger.exception("Failed to scrape mobile data remaining")
+        LOGGER.exception("Failed to scrape mobile data remaining")
         phone_data_remaining = -1.0
 
-    MySeriesHelper(mifi_data_remaining=mifi_data_remaining, phone_data_remaining=phone_data_remaining)
+    MySeriesHelper(mifi_data_remaining=mifi_data_remaining, mifi_days_remaining=mifi_days_remaining, phone_data_remaining=phone_data_remaining, phone_days_remaining=phone_days_remaining)
     MySeriesHelper.commit()
 
 def main():
+
+    accountconfig = ConfigParser()
+    accountconfig.read('conf/ee-accounts.ini')
     while True:
         try:
-            mifi_session = login(config.get("mifi", "username"),config.get("mifi", "password"))
-            phone_session = login(config.get("phone", "username"),config.get("phone", "password"))
+            mifi_session = login(accountconfig.get("mifi", "username"),accountconfig.get("mifi", "password"))
+            phone_session = login(accountconfig.get("phone", "username"),accountconfig.get("phone", "password"))
             session_usage_count = 0
 
             #Renew the sessions every 5 hours
@@ -133,8 +144,8 @@ def main():
                 session_usage_count =  session_usage_count + 1
             session_usage_count = 0
         except Exception as e:
-            logger.exception("Exception occurred while trying to scrape")
+            LOGGER.exception("Exception occurred while trying to scrape")
 
-
-
-main()
+if __name__ == "__main__":
+    import sys
+    main()

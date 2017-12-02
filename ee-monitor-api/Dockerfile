@@ -6,8 +6,8 @@ RUN easy_install3 pip
 RUN pip install flask flask-jsonpify flask-restful influxdb python-json-logger
 
 ADD conf/* /ee-monitor-api/conf/
-ADD ee-monitor-api.py /ee-monitor-api/
+ADD ee_monitor_api.py /ee-monitor-api/
 
 WORKDIR /ee-monitor-api/
 
-CMD python3 /ee-monitor-api/ee-monitor-api.py
+CMD python3 /ee-monitor-api/ee_monitor_api.py
