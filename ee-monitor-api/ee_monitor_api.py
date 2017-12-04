@@ -1,3 +1,4 @@
+"""Provide a REST API to retrieve remaining days and data from InfluxDB"""
 import logging
 import logging.config
 

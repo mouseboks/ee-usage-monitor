@@ -1,3 +1,4 @@
+"""Scrapes remaining data and days from two EE account pages and stores the data in InfluxDB"""
 import logging
 import logging.config
 
@@ -14,10 +15,9 @@ from influxdb import SeriesHelper
 
 import page_parser
 
+
 CONFIG = ConfigParser()
 CONFIG.read('conf/ee-monitor.ini')
-
-
 
 logging.config.fileConfig('conf/ee-monitor-logging.ini')
 LOGGER = logging.getLogger(CONFIG.get("Logging", "LOGGER_name"))
@@ -57,27 +57,23 @@ class MySeriesHelper(SeriesHelper):
         autocommit = True
 
 
-
-
-
 def login(username, password):
     # FIXME exception trace out of here will contain password in plain text!!!!!
     start_url = 'https://id.ee.co.uk/id/login'
     login_url = 'https://api.ee.co.uk/v1/identity/authorize/login'
 
     session = requests.Session()
-
     request = session.get(start_url)
     if request.status_code != 200:
         raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + start_url)
 
     soup = BeautifulSoup(request.text, 'lxml')
     csrf = soup.find(id="csrf")['value']
-    # print csrf
     request_id = soup.find(id="requestId")['value']
-    # print requestId
+
     request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': request_id}
     request = session.post(login_url, data=request_data)
+
     return session
 
 
@@ -118,6 +114,7 @@ def get_data_points(mifi_session, phone_session):
     MySeriesHelper(mifi_data_remaining=mifi_data_remaining, mifi_days_remaining=mifi_days_remaining, phone_data_remaining=phone_data_remaining, phone_days_remaining=phone_days_remaining)
     MySeriesHelper.commit()
 
+
 def main():
 
     accountconfig = ConfigParser()
@@ -131,11 +128,12 @@ def main():
             #Renew the sessions every 5 hours
             while session_usage_count < (30 * 5):
                 get_data_points(mifi_session, phone_session)
-                time.sleep(60*2)
+                time.sleep(60*2) #Wait 2 minutes between data requests
                 session_usage_count = session_usage_count + 1
             session_usage_count = 0
-        except Exception:
-            LOGGER.exception("Exception occurred while trying to scrape")
+        except Exception as e:
+            LOGGER.exception("Exception occurred while trying to scrape data")
+
 
 if __name__ == "__main__":
     main()

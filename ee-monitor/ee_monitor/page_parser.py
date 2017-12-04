@@ -1,3 +1,4 @@
+"""Finds the data and days values from the HTML from an EE account page"""
 import re
 
 from bs4 import BeautifulSoup
