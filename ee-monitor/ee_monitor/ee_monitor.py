@@ -128,9 +128,10 @@ def main():
             #Renew the sessions every 5 hours
             while session_usage_count < (30 * 5):
                 get_data_points(mifi_session, phone_session)
-                time.sleep(60*2) #Wait 2 minutes between data requests
+                time.sleep(60*5) #Wait 2 minutes between data requests
                 session_usage_count = session_usage_count + 1
             session_usage_count = 0
+            time.sleep(60*15) #Wait 15 minutes before logging in again
         except Exception as e:
             LOGGER.exception("Exception occurred while trying to scrape data")
 

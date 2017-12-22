@@ -13,5 +13,8 @@ def retrieveDaysRemaining(page_source):
     soup = BeautifulSoup(page_source, 'lxml')
 
     scripts = soup.find('span', { 'class': 'usage-datapass-info-1'})
-    content = re.search('[0-9]+',scripts.contents[0])
-    return int(content.group(0))
+    if re.search('Ends today',scripts.contents[0]):
+        return 0
+    else:
+        content = re.search('[0-9]+',scripts.contents[0])
+        return int(content.group(0))
