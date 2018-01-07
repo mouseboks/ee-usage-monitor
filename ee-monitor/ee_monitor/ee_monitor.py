@@ -99,7 +99,7 @@ def get_data_points(session, url):
     except Exception:
         LOGGER.exception("Failed to scrape data remaining from " + url)
         data_remaining = -1.0
-        days_remaining = -1.0
+        days_remaining = -1
 
     return collections.namedtuple('data_points','data,days')(data_remaining,days_remaining)
 
@@ -111,8 +111,8 @@ def main():
     accountconfig.read('conf/ee-accounts.ini')
 
     while True:
-        mifi_data = collections.namedtuple('data_points','data,days')(-1.0,-1.0)
-        phone_data = collections.namedtuple('data_points','data,days')(-1.0,-1.0)
+        mifi_data = collections.namedtuple('data_points','data,days')(-1.0,-1)
+        phone_data = collections.namedtuple('data_points','data,days')(-1.0,-1)
 
         try:
             mifi_session = login(accountconfig.get("mifi", "username"), accountconfig.get("mifi", "password"))
@@ -122,7 +122,7 @@ def main():
 
         try:
             phone_session = login(accountconfig.get("phone", "username"), accountconfig.get("phone", "password"))
-            mifi_data = get_data_points(phone_session, "https://myaccount.ee.co.uk/my-small-business/")
+            phone_data = get_data_points(phone_session, "https://myaccount.ee.co.uk/my-small-business/")
         except Exception as e:
             LOGGER.exception("Exception occurred while trying to scrape phone data")
 
