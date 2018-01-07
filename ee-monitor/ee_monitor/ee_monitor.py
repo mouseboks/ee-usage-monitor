@@ -74,7 +74,6 @@ def login(username, password):
     request_id = soup.find(id="requestId")['value']
 
     request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': request_id}
-    LOGGER.info(request_data)
     request = session.post(login_url, data=request_data)
     if request.status_code != 200:
         raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
