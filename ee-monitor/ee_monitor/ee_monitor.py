@@ -2,6 +2,8 @@
 import logging
 import logging.config
 
+import collections
+
 import time
 
 from configparser import ConfigParser
@@ -72,7 +74,10 @@ def login(username, password):
     request_id = soup.find(id="requestId")['value']
 
     request_data = {'username': username, 'password': password, 'csrf': csrf, 'requestId': request_id}
+    LOGGER.info(request_data)
     request = session.post(login_url, data=request_data)
+    if request.status_code != 200:
+        raise ValueError('Received unexpected status code ' + str(request.status_code) + ' from ' + login_url)
 
     return session
 
@@ -86,54 +91,46 @@ def get_page_text(session, url):
     return request.text
 
 
-def get_data_points(mifi_session, phone_session):
-    #client = hvac.Client()
-    #client = hvac.Client(url='http://localhost:8200')
-    phone_url = "https://myaccount.ee.co.uk/my-small-business/"
-    mifi_url = "https://myaccount.ee.co.uk/my-mobile-broadband-pay-monthly/"
-
+def get_data_points(session, url):
     try:
-        text = get_page_text(mifi_session, mifi_url)
-        mifi_data_remaining = page_parser.retrieveDataRemaining(text)
-        mifi_days_remaining = page_parser.retrieveDaysRemaining(text)
-        LOGGER.info("Retrieved mifi data remaining value of " + str(mifi_data_remaining))
+        text = get_page_text(session, url)
+        data_remaining = page_parser.retrieveDataRemaining(text)
+        days_remaining = page_parser.retrieveDaysRemaining(text)
+        LOGGER.info("Retrieved data remaining value of " + str(data_remaining) + " from " + url)
     except Exception:
-        LOGGER.exception("Failed to scrape mifi data remaining")
-        mifi_data_remaining = -1.0
+        LOGGER.exception("Failed to scrape data remaining from " + url)
+        data_remaining = -1.0
+        days_remaining = -1.0
 
-    try:
-        text = get_page_text(phone_session, phone_url)
-        phone_data_remaining = page_parser.retrieveDataRemaining(text)
-        phone_days_remaining = page_parser.retrieveDaysRemaining(text)
+    return collections.namedtuple('data_points','data,days')(data_remaining,days_remaining)
 
-        LOGGER.info("Retrieved phone data remaining value of " + str(phone_data_remaining))
-    except Exception:
-        LOGGER.exception("Failed to scrape mobile data remaining")
-        phone_data_remaining = -1.0
-
-    MySeriesHelper(mifi_data_remaining=mifi_data_remaining, mifi_days_remaining=mifi_days_remaining, phone_data_remaining=phone_data_remaining, phone_days_remaining=phone_days_remaining)
-    MySeriesHelper.commit()
 
 
 def main():
 
     accountconfig = ConfigParser()
     accountconfig.read('conf/ee-accounts.ini')
+
     while True:
+        mifi_data = collections.namedtuple('data_points','data,days')(-1.0,-1.0)
+        phone_data = collections.namedtuple('data_points','data,days')(-1.0,-1.0)
+
         try:
             mifi_session = login(accountconfig.get("mifi", "username"), accountconfig.get("mifi", "password"))
-            phone_session = login(accountconfig.get("phone", "username"), accountconfig.get("phone", "password"))
-            session_usage_count = 0
-
-            #Renew the sessions every 5 hours
-            while session_usage_count < (30 * 5):
-                get_data_points(mifi_session, phone_session)
-                time.sleep(60*5) #Wait 2 minutes between data requests
-                session_usage_count = session_usage_count + 1
-            session_usage_count = 0
-            time.sleep(60*15) #Wait 15 minutes before logging in again
+            mifi_data = get_data_points(mifi_session, "https://myaccount.ee.co.uk/my-mobile-broadband-pay-monthly/")
         except Exception as e:
-            LOGGER.exception("Exception occurred while trying to scrape data")
+            LOGGER.exception("Exception occurred while trying to scrape mifi data")
+
+        try:
+            phone_session = login(accountconfig.get("phone", "username"), accountconfig.get("phone", "password"))
+            mifi_data = get_data_points(phone_session, "https://myaccount.ee.co.uk/my-small-business/")
+        except Exception as e:
+            LOGGER.exception("Exception occurred while trying to scrape phone data")
+
+        MySeriesHelper(mifi_data_remaining=mifi_data.data, mifi_days_remaining=mifi_data.days, phone_data_remaining=phone_data.data, phone_days_remaining=phone_data.days)
+        MySeriesHelper.commit()
+
+        time.sleep(60*60) #Wait 1 hour before trying again
 
 
 if __name__ == "__main__":
