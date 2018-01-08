@@ -128,8 +128,8 @@ def main():
 
         MySeriesHelper(mifi_data_remaining=mifi_data.data, mifi_days_remaining=mifi_data.days, phone_data_remaining=phone_data.data, phone_days_remaining=phone_data.days)
         MySeriesHelper.commit()
-
-        time.sleep(60*60) #Wait 1 hour before trying again
+        
+        time.sleep(60*60*6) #Wait 6 hours(!) before trying again
 
 
 if __name__ == "__main__":
