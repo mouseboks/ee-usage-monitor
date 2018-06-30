@@ -4,13 +4,13 @@ from .context import page_parser
 def test_retrieveDataRemaining_personal():
 
     file = open("tests/test-data/test_personal_bandwidth_page.txt")
-    assert page_parser.retrieveDataRemaining(file.read()) == 33.3
+    assert page_parser.retrieveDataRemaining(file.read()) == 20.1
 
 
 def test_retrieveDaysRemaining_personal():
 
     file = open("tests/test-data/test_personal_bandwidth_page.txt")
-    assert page_parser.retrieveDaysRemaining(file.read()) == 15
+    assert page_parser.retrieveDaysRemaining(file.read()) == 9
 
 
 def test_retrieveDataRemaining_business():
