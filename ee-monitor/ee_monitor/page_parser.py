@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def retrieveDataRemaining(page_source):
     soup = BeautifulSoup(page_source, 'lxml')
 
-    scripts = soup.find('span', { 'class': 'usage-datapass-header-text2 usage-datapass-header-text2--lg'})
+    scripts = soup.find('span', { 'class': 'usage-datapass-header-text-bold'})
     return float(scripts.contents[1].text)
 
 def retrieveDaysRemaining(page_source):
