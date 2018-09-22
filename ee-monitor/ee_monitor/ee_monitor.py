@@ -21,7 +21,7 @@ import page_parser
 CONFIG = ConfigParser()
 CONFIG.read('conf/ee-monitor.ini')
 
-logging.config.fileConfig('conf/ee-monitor-logging.ini')
+#logging.config.fileConfig('conf/ee-monitor-logging.ini')
 LOGGER = logging.getLogger(CONFIG.get("Logging", "LOGGER_name"))
 
 INFLUX = "Influx"
